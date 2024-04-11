@@ -1,7 +1,7 @@
 body{
     background-color: rgb(214, 234, 216);
     
-    height: 150vh;
+    /* height: 150vh; */
     margin: 0 20px;
     padding: 0 60px;
 }
@@ -10,11 +10,11 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    /* background-color: rgb(17, 10, 110); */
-    background-image: url('images/nav3.jpeg');
-    background-repeat: no-repeat;
+    background-color: rgb(214, 234, 216);
+    /* background-image: url('images/nav3.jpeg'); */
+    /* background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     position: fixed;
     left: 60px; /* match this with the left margin of the body */
     right: 60px; /* match this with the right margin of the body */
@@ -35,7 +35,7 @@ body{
     
 }
 .nav-links a{
-    color: #fff;
+    color: #3e2020;
     text-decoration: none;
 }
 .auth-links{
@@ -44,14 +44,62 @@ body{
     gap: 20px;
 }
 .auth-links a{
-    color: #fff;
+    color: #320909;
     text-decoration: none;
 }
 .logo img{
     width: 100px;
     height: 50px;
 }
-#introduction{
-    padding-top: 200px;
+
+
+.intro-container {
+    background-image: linear-gradient(rgba(126, 121, 170, 0.365), rgba(54, 34, 86, 0.292)), url('images/bg3.png');
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex; /* Add this line */
+    justify-content: center; /* Add this line */
+    align-items: center; /* Add this line */
+    flex-direction: column;;
+    font-size: larger;
+}
+.intro-container h1 {
+    color: #870900;
+    font-family:monospace, sans-serif;
+    font-size: 3.5em;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(247, 163, 163, 0.372);
 }
 
+.intro-container p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #1f3d12;
+    background-color: rgba(155, 137, 132, 0.614);
+    font-size: 1.5em;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.intro-container a {
+    background-color: #266262;
+    color: #91ff83;
+    font-size: 1.2em;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #397676;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.intro-container a:hover {
+    background-color: #794726;
+    color: #fff;
+}
