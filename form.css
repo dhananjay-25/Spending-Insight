@@ -1,0 +1,153 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(214, 234, 216);
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(214, 234, 216);
+    flex-wrap: wrap;
+
+    position: sticky;
+    top: 1%;
+    padding: 10px;
+    width: 100%;
+    box-sizing:border-box; 
+    font-size: larger;
+   
+}
+.navbar .container {
+    display: flex;
+    justify-content: first-end;
+ 
+}
+.logo{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    color: #812626;
+    
+     /* Add border */
+
+}
+.nav-links a:hover {
+    background-color: rgba(174, 172, 123, 0.509); /* Change background color on hover */
+    border-radius: 5px;
+    color: #721414; /* Change text color on hover */
+}
+
+.nav-links a{
+    color: #3e2020;
+    text-decoration: none;
+     /* Add border */
+     padding: 10px 15px; /* Add padding */
+     transition: all 0.3s ease; /* Add transition */
+}
+.auth-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between; /* Add some space between the links */
+    gap: 5px;
+}
+.auth-links a {
+    display: inline-block;
+    background-color: #007BFF; /* Change the color as needed */
+    color: #fff; /* Change the color as needed */
+    padding: 10px; /* Add some padding to make it look like a button */
+    border-radius: 15px; /* Add some border radius to make it look like a button */
+    text-decoration: none; /* Remove the underline */
+    list-style: none;
+    transition: all 0.3s ease; /* Add a transition for a smooth hover effect */
+}
+
+.auth-links a:hover {
+    background-color: #0056b3; /* Change the color as needed */
+    color: #fff; /* Change the color as needed */
+}
+.logo img{
+    width: 100px;
+    height: 50px;
+}
+
+.container1 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0e377d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #5e55db;
+}
+ul.social-icons li a:last-child {
+    margin-right: 0; /* Remove the right margin from the last icon */
+}
+
+.social-icons a {
+    margin-right: 10px; /* Add some space between the icons */
+}
+
+.social-icons a:last-child {
+    margin-right: 0; /* Remove the right margin from the last icon */
+}
+
+.social-icons a i::before {
+    color: #ffffff !important; /* Change the icon color to white */
+}
+.footer-custom {
+   
+    color: #72bc53;
+}

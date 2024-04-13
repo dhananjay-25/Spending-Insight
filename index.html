@@ -4,60 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spending-Insight</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
       <a href="index.html" class="logo">
-        <img src="images/logo.jpg" alt="Logo">
+        <img src="images/logo.png" alt="Logo">
     </a>
+    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target ="#Toggle" aria-controls="Toggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+  </button>
+  <div class="navbar-collapse" id="Toggle">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="features.html">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <ul class="auth-links">
+        <ul class="auth-links navbar-nav ms-auto">
             <li><a href="login.html">Login</a></li>
-            <li><a href="registration.html">Register</a></li>
+            <li><a href="register.html">Register</a></li>
         </ul>
+  </div>
     </div>
 </nav>
+
+
+
 <!-- Introduction -->
 <section id="introduction">
   <div class="intro-container">
     <h1>Welcome to Spending Insight</h1>
     <p>Track your expenses, plan your budget, and gain insights into your spending habits.</p>
-    <a href="registration.html" class="cta">Get Started</a>
+    <a href="register.html" class="cta">Get Started</a>
   </div>
   
 </section>
+<!-- caurosel -->
+<!-- Featres -->
+<section id="features">
+  <h2 class="text-center my-4" style="font-family: 'Pacifico', cursive; padding: 20px; border-radius: 8px; text-shadow: 4px 2px 2px #519f5b; color:#5e1d0d; font-weight: bold; font-size: 3.3rem;">Our Features</h2>
+
+<div id="carousel" class="carousel slide carousel-fade">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/track-expense.jpg" class="d-block w-100" alt="Track Expense">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Track Expense</h5>
+        <p>Keep track of your expenses with our easy-to-use expense tracker.</p>
+        <a href="expense.html" class="btn btn-primary">Go to Track Expense</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/plan-budget.jpg" class="d-block w-100" alt="Plan Budget">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Plan Budget</h5>
+        <p>Plan your budget and manage your finances effectively.</p>
+        <a href="plan_budget.html" class="btn btn-primary">Go to Plan Budget</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/analysis.png" class="d-block w-100" alt="Store Transactions">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Get Analysis</h5>
+        <p>Explore trends, visualize spending, and make informed decisions with our analysis tools.</p>
+        <a href="analysis.html" class="btn btn-primary">Go to Analysis</a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+  
+  <div class="card-group text-center mb-3">
+    <div class="card ">
+      <div class="card-body ">
+        <h5 class="card-title">Track Expenses</h5>
+        <p class="card-text">With our intuitive expense tracking feature, you can easily keep track of your spending habits. Categorize your expenses, set monthly limits, and get real-time updates on your spending. Stay on top of your finances and make smarter decisions with Spending-Insight.</p>
+        <a href="expense.html" class="btn btn-warning">Go to Track Expense</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Plan Budget</h5>
+        <p class="card-text">Achieve your financial goals with our budget planning tool. Set your monthly budget, allocate funds to different categories, and track your progress over time. With Spending-Insight, budgeting has never been easier or more effective.</p>
+        <a href="plan_budget.html" class="btn btn-danger">Go to Plan Budget</a>
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Get Analysis</h5>
+        <p class="card-text">Unlock valuable insights into your spending habits with our detailed analysis tools. Visualize your spending patterns, identify trends, and get personalized recommendations to improve your financial health. With Spending-Insight, understanding your finances has never been more insightful.</p>
+        <a href="analysis.html" class="btn btn-info">Go to Analysis</a>
+
+      </div>
+    </div>
+  </div>
+
+</section>
 
 <!-- Features -->
-<section id="features">
-  <h2>Features</h2>
-  <!-- Add your features here -->
+<!-- About -->
+<!-- About -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="card card-custom bg-light">
+      <div class="card-body text-center">
+        <h2 class="card-title">About Us</h2>
+        <p class="card-text">Welcome to Spending Insight, your go-to platform for managing your finances with ease. We believe that financial management should be simple, intuitive, and empowering. With our user-friendly tools and expert insights, you can take control of your money and achieve your financial goals.</p>
+        <p class="card-text">At Spending Insight, we're committed to helping you make smart financial decisions. Whether you're tracking expenses, planning your budget, or analyzing spending patterns, our platform has everything you need to succeed. Join us on your journey to financial freedom!</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- How it works -->
-<section id="how-it-works">
-  <h2>How It Works</h2>
-  <!-- Add a guide on how to use your website here -->
-</section>
+<button id="scrollToTopBtn" class="btn btn-secondary btn-floating" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
 
-<!-- Testimonials -->
-<section id="testimonials">
-  <h2>Testimonials</h2>
-  <!-- Add testimonials here -->
-</section>
+<footer class="footer-custom bg-dark py-3">
+  <div class="container bg-dark">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Contact Us</h4>
+        <p>Email: info@spendinginsight.com</p>
+        <p>Phone: 123-456-7890</p>
+      </div>
+      <div class="col-md-6">
+        <h4>Follow Us</h4>
+        <p>Stay connected with us on social media:</p>
+        <ul class="social-icons list-unstyled list-inline">
+          <li class="list-inline-item"><a href="https://www.facebook.com/yourpage"><i class="fab fa-facebook-f"></i></a></li>
+          <li class="list-inline-item"><a href="https://twitter.com/yourhandle"><i class="fab fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.instagram.com/yourprofile"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-3">
+  </div>
+  </div>
+  <div class="footer-bottom text-center py-2">
+    <div class="container bg-dark">
+      <p class="mb-0">&copy; 2024 Spending Insight. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
-<!-- Call to Action -->
-<section id="cta">
-  <h2>Get Started Today</h2>
-  <!-- Add a sign up button or form here -->
-</section>
-
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -1,28 +1,27 @@
 body{
     background-color: rgb(214, 234, 216);
-    
-    /* height: 150vh; */
-    margin: 0 20px;
-    padding: 0 60px;
+    margin: 0;
+    padding: 0;
 }
 .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
     background-color: rgb(214, 234, 216);
-    /* background-image: url('images/nav3.jpeg'); */
-    /* background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed; */
-    position: fixed;
-    left: 60px; /* match this with the left margin of the body */
-    right: 60px; /* match this with the right margin of the body */
-    box-sizing: border-box; 
-    
+    flex-wrap: wrap;
+    position: sticky;
+    top: 1%;
+    padding: 10px;
+    width: 100%;
+    box-sizing:border-box; 
     font-size: larger;
+   
 }
-
+.navbar .container {
+    display: flex;
+    justify-content: first-end;
+ 
+}
 .logo{
     color: #fff;
     text-decoration: none;
@@ -32,26 +31,63 @@ body{
     list-style: none;
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    color: #812626;
     
+
+
 }
+.nav-links a:hover {
+    background-color: rgba(174, 172, 123, 0.509); 
+    border-radius: 5px;
+    color: #721414;
+}
+
 .nav-links a{
     color: #3e2020;
     text-decoration: none;
+     padding: 10px 15px; 
+     transition: all 0.3s ease; 
 }
-.auth-links{
+.auth-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    justify-content: space-between; 
+    gap: 5px;
 }
-.auth-links a{
-    color: #320909;
-    text-decoration: none;
+.auth-links a {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px; 
+    border-radius: 15px;
+    text-decoration: none; 
+    list-style: none;
+    transition: all 0.3s ease; 
+}
+
+.auth-links a:hover {
+    background-color: #0056b3; 
+    color: #fff;
 }
 .logo img{
     width: 100px;
     height: 50px;
 }
-
+.nav2 .container{
+    background-color: #b0ae54ab;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    
+}
 
 .intro-container {
     background-image: linear-gradient(rgba(126, 121, 170, 0.365), rgba(54, 34, 86, 0.292)), url('images/bg3.png');
@@ -60,9 +96,9 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
-    display: flex; /* Add this line */
-    justify-content: center; /* Add this line */
-    align-items: center; /* Add this line */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
     flex-direction: column;;
     font-size: larger;
 }
@@ -73,13 +109,13 @@ body{
     padding: 20px;
     text-align: center;
     margin-bottom: 20px;
-    background-color: rgba(247, 163, 163, 0.372);
+    /* background-color: rgba(247, 163, 163, 0.372); */
 }
 
 .intro-container p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #1f3d12;
-    background-color: rgba(155, 137, 132, 0.614);
+    /* background-color: rgba(155, 137, 132, 0.614); */
     font-size: 1.5em;
     text-align: center;
     max-width: 800px;
@@ -102,4 +138,224 @@ body{
 .intro-container a:hover {
     background-color: #794726;
     color: #fff;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: #020b56; 
+}
+.carousel-item {
+    height: 80vh; 
+    overflow: hidden; 
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+}
+h2.text-center {
+    color: #020b56; 
+    font-size: 2.5em; 
+    font-weight: bold; 
+    margin-bottom: 1em; 
+}
+.carousel-item img {
+    object-fit: contain; 
+    object-position: center;
+    height: 100%; 
+    background-color: #fff; 
+}
+.carousel-caption {
+    background-color: rgba(249, 249, 249, 0.516); 
+    color: #302323; 
+    padding: 1em; 
+    border-radius: 10px; 
+    font-family: Arial, sans-serif; 
+    font-size: 1.2em; 
+    font-weight: bold; 
+    font-style: italic;
+
+}
+
+.carousel-caption h5 {
+    color: #3a0505; 
+    font-family: Arial, sans-serif; 
+    font-size: 2em;
+    font-weight: bold; 
+    font-style: italic; 
+}
+
+/* Feature cards */
+
+.card-group {
+    margin: 20px 0;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.card-title {
+    color: #6a1d07; /* Bootstrap primary color */
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.card-text {
+    color: #697076; /* Bootstrap secondary color */
+    font-size: 16px;
+    padding-bottom: 25px;
+}
+.card-body .btn {
+    color: rgb(255, 255, 255);
+    padding: 10px 50px; 
+    margin-top: auto; 
+    font-size: 1.1rem;
+    
+}
+
+
+/* footer */
+.card-custom {
+    border: none; /* Remove the border */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add a subtle shadow */
+}
+
+.card-custom .card-title {
+    color: #007bff; /* Change the title color to a dark blue */
+}
+
+.card-custom .card-text {
+    color: #071828; /* Change the text color to a dark gray */
+}
+.footer-custom {
+   
+    color: #72bc53;
+    position: absolute;
+    width: 100%;
+}
+/* @media (max-width: 850px) {
+    .footer-custom{
+        position: absolute;
+        color: #72bc53;
+        width: 100%;
+    }
+} */
+
+ul.social-icons li a:last-child {
+    margin-right: 0; /* Remove the right margin from the last icon */
+}
+
+.social-icons a {
+    margin-right: 10px; /* Add some space between the icons */
+}
+
+.social-icons a:last-child {
+    margin-right: 0; /* Remove the right margin from the last icon */
+}
+
+.social-icons a i::before {
+    color: #ffffff !important; /* Change the icon color to white */
+}
+.btn-primary {
+    background-color: #3b53a1;
+    border-color: #007bff;
+    margin-top: 15px;
+}
+
+.expense-tracker-container {
+    background-color: #ddecefc7;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#budgetSummary {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.list-group-item {
+    /* Existing styles */
+    background-color: #f9f9f9;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Wrap buttons in a div */
+.list-group-item .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit-btn,
+.delete-btn {
+    /* Existing styles */
+    margin-left: 10px; /* Add some margin between the buttons */
+    flex: 0 0 auto;
+
+    /* New styles */
+    padding: 3px 5px; /* Add some padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    color: white; /* Set text color to white */
+}
+
+.edit-btn {
+    background-color: #007BFF;
+    margin-left: auto;
+}
+
+.delete-btn {
+    background-color: #DC3545;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-buttons button {
+    flex: 05%;
+    margin-right: 10px;
+}
+
+
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+}
+
+#scrollToTopBtn:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
 }
