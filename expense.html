@@ -9,6 +9,8 @@
 
 
     <link rel="stylesheet" href="style.css">
+    </style>
+
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -46,70 +48,60 @@
     </div>
   </nav>
 
-<!-- Expense Entry Form -->>
-    <section id="expense-form">
-<div class="container container expense-tracker-container mt-5">
-<div class="jumbotron text-center  text-center text-dark">
-    <h1 class="display-4">Expense Tracker</h1>
-    <p class="lead">Track your expenses easily and efficiently.</p>
-</div>
-    <form>
-        <div class="form-group">
-            <label for="expenseName">Expense Name</label>
-            <input type="text" class="form-control" id="expenseName" placeholder="Enter expense name">
-        </div>
-        <div class="form-group">
-            <label for="expenseCategory">Expense Category</label>
-            <select class="form-control" id="expenseCategory">
-                <option>Food</option>
-                <option>Transport</option>
-                <option>Entertainment</option>
-                <option>Utilities</option>
-                <option>Other</option>
+<div class="exp-container mt-5">
+    <h2 class="text-center">Track Expenses</h2>
+  
+    <!-- Monthly Budget and Remaining Budget -->
+    <div class="exp-row mt-4">
+      <div class="col-md-6 offset-md-3">
+        <h4>Monthly Budget: ₹<span id="monthlyBudget">50000</span></h4>
+        <h4>Total Expenses: ₹<span id="totalExpenses">0</span></h4>
+      </div>
+    </div>
+  
+    <!-- Expense Form -->
+    <div class="exp-row mt-5">
+      <div class="col-md-6 offset-md-3">
+        <form id="expenseForm">
+          <h4>Add Expense</h4>
+          <div class="mb-3">
+            <label for="expenseCategory" class="form-label">Category</label>
+            <select class="form-select" id="expenseCategory">
+              <!-- Options for categories will be dynamically populated -->
             </select>
-        </div>
-        <div class="form-group">
-            <label for="expenseAmount">Expense Amount</label>
+          </div>
+          <div class="mb-3">
+            <label for="expenseAmount" class="form-label">Amount (₹)</label>
             <input type="number" class="form-control" id="expenseAmount" placeholder="Enter expense amount">
-        </div>
-        <div class="form-group">
-            <label for="expenseDate">Expense Date</label>
-            <input type="date" class="form-control" id="expenseDate">
-        </div>
-        <div class="form-group">
-            <label for="expenseNotes">Notes</label>
-            <textarea class="form-control" id="expenseNotes" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Expense</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Expense Table -->
+    <div class="exp-row mt-5">
+      <div class="col-md-6 offset-md-3">
+        <h4>Expense Table</h4>
+        <table id="expenseTable" class="table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Amount (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Expense items will be dynamically populated -->
+          </tbody>
+        </table>
+        <button id="saveExpenseBtn" class="btn btn-success">Save Expenses</button>
+        <button id="calculateExpenseBtn" class="btn btn-info">Category-wise Sum</button>
+         
+
+      </div>
+    </div>
 </div>
-    </section>
-
-    <!-- Expense List Display -->
-    <section id="expense-list">
-        <div class="container">
-            <h2>Expense List</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Populate with dynamic data from backend -->
-                    <tr>
-                        <td>$100</td>
-                        <td>2024-04-15</td>
-                        <td>Groceries</td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </tbody>
-            </table>
-        </div>
-    </section>
-
+  
 
 <footer class="footer-custom bg-dark py-3">
     <div class="container bg-dark">
@@ -136,7 +128,7 @@
         </div>
     </div>
 </footer>
-    
+    <script src="script.js"></script>
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

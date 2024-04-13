@@ -1,3 +1,4 @@
+//budget planner code
 document.addEventListener('DOMContentLoaded', function() {
     const budgetForm = document.getElementById('budgetForm');
     const budgetSummary = document.getElementById('budgetSummary');
@@ -99,3 +100,200 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     });
 });
+
+
+// Expense tracker code
+document.addEventListener('DOMContentLoaded', function() {
+    // Fetch monthly budget and categories from database (Dummy data for now)
+    const monthlyBudget = 50000;
+    let totalExpenses = 0;
+    const expenseData = {};
+
+    // Populate categories in expense form
+    const expenseCategorySelect = document.getElementById('expenseCategory');
+    const categories = ['Food', 'Transportation', 'Utilities', 'Groceries'];
+
+    categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        expenseCategorySelect.appendChild(option);
+    });
+
+    // Update budget display
+    document.getElementById('monthlyBudget').textContent = monthlyBudget;
+
+    // Handle expense form submission
+    const expenseForm = document.getElementById('expenseForm');
+    expenseForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const expenseCategory = expenseCategorySelect.value;
+        const expenseAmount = parseFloat(document.getElementById('expenseAmount').value);
+
+        if (!isNaN(expenseAmount)) {
+            // Update total expenses
+            totalExpenses += expenseAmount;
+            document.getElementById('totalExpenses').textContent = totalExpenses;
+
+            // Update expense data
+            if (!expenseData[expenseCategory]) {
+                expenseData[expenseCategory] = 0;
+            }
+            expenseData[expenseCategory] += expenseAmount;
+
+            // Add expense to table
+            const expenseTable = document.getElementById('expenseTable').getElementsByTagName('tbody')[0];
+            const newRow = expenseTable.insertRow();
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            cell1.textContent = expenseCategory;
+            cell2.textContent = expenseAmount;
+
+            // Reset form
+            expenseForm.reset();
+        }
+    });
+
+    // Calculate & Display Category-wise Expenses Button
+    const calculateExpenseBtn = document.getElementById('calculateExpenseBtn');
+    calculateExpenseBtn.addEventListener('click', function() {
+        const categoryWiseTotal = {};
+
+        for (const category in expenseData) {
+            if (expenseData.hasOwnProperty(category)) {
+                if (!categoryWiseTotal[category]) {
+                    categoryWiseTotal[category] = 0;
+                }
+                categoryWiseTotal[category] += expenseData[category];
+            }
+        }
+
+        // Display category-wise totals
+        const expenseTable = document.getElementById('expenseTable').getElementsByTagName('tbody')[0];
+        while (expenseTable.firstChild) {
+            expenseTable.removeChild(expenseTable.firstChild);
+        }
+
+        for (const category in categoryWiseTotal) {
+            const newRow = expenseTable.insertRow();
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            cell1.textContent = category;
+            cell2.textContent = categoryWiseTotal[category];
+        }
+    });
+
+    // Save Expenses Button
+    const saveExpenseBtn = document.getElementById('saveExpenseBtn');
+    saveExpenseBtn.addEventListener('click', function() {
+        saveExpenseToDatabase(expenseData, totalExpenses);
+    });
+
+    // Function to save expense to database
+    function saveExpenseToDatabase(expenses, total) {
+        console.log('Saving expenses to database...');
+        console.log('Total Expenses:', total);
+        console.log('Expense Data:', expenses);
+        // Implement saving to database logic here
+        // This can be done using AJAX, fetch API, or any backend method
+    }
+});
+
+
+
+// User Registration
+fetch('register.php', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        username: 'john_doe',
+        email: 'john@example.com',
+        password: 'password123',
+    }),
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data.message);
+});
+
+// User Login
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.querySelector('.form-container form');
+    const messageDiv = document.querySelector('.message'); // Assuming you have a message div to display messages
+
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        fetch('php_files/login.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password,
+            }),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data.token);
+            messageDiv.textContent = "Login successful!";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            messageDiv.textContent = "An error occurred. Please try again.";
+        });
+    });
+});
+
+
+
+// get analysis - charts...
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('php_files/getAnalysis.php')
+    .then(response => response.json())
+    .then(data => {
+        // Extract data for Chart.js
+        const labels = data.category_expenses.map(item => item.category);
+        const amounts = data.category_expenses.map(item => item.total_amount);
+
+        // Create Chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Amount',
+                    data: amounts,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+
