@@ -23,9 +23,9 @@
   <div class="navbar-collapse" id="Toggle">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#features">Features</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="auth-links navbar-nav ms-auto">
             <li><a href="login.html">Login</a></li>
@@ -35,10 +35,13 @@
     </div>
 </nav>
 <!-- nav 2 -->
-<nav class="nav2 navbar navbar-expand-lg">
+<nav class="nav2 navbar navbar-expand-lg navbar-light">
   <div class="container">
-      <div class="collapse navbar-collapse" id="secondaryNav">
-          <ul class="nav-links navbar-nav mx-auto">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNav2">
+          <ul class="nav-links navbar-nav mx-auto" >
               <li ><a  href="expense.html">Expense Tracking</a></li>
               <li ><a  href="plan_budget.html">Budget Planning</a></li>
               <li><a  href="analysis.html">Analysis</a></li>
@@ -80,7 +83,7 @@
 </div>
 
 
-<footer class="footer-custom bg-dark py-3">
+<footer class="footer-custom bg-dark py-3" id="contact">
     <div class="container bg-dark">
       <div class="row">
         <div class="col-md-6">
@@ -104,11 +107,14 @@
         <p class="mb-0">&copy; 2024 Spending Insight. All rights reserved.</p>
       </div>
     </div>
-  </footer>
+</footer>
 
-   <script src="script.js"></script>  
+  <script src="script.js"></script> 
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script> 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  
-  </body>
-  </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

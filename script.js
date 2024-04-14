@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle expense form submission
     const expenseForm = document.getElementById('expenseForm');
     expenseForm.addEventListener('submit', function(event) {
-        event.preventDefault();
+         event.preventDefault(); // Prevent default form submission
         
         const expenseCategory = expenseCategorySelect.value;
         const expenseAmount = parseFloat(document.getElementById('expenseAmount').value);

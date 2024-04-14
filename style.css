@@ -109,6 +109,9 @@ body{
     padding: 20px;
     text-align: center;
     margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.418); 
+        padding: 10px;
+        border-radius: 20px;
     /* background-color: rgba(247, 163, 163, 0.372); */
 }
 
@@ -136,8 +139,38 @@ body{
 }
 
 .intro-container a:hover {
-    background-color: #794726;
+    background-color: #6b7d72;
     color: #fff;
+}
+@media (max-width: 425px) {
+    .intro-container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .intro-container p {
+        font-size: 1.2rem;
+        background-color: rgba(255, 255, 255, 0.438); 
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .intro-container h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        background-color: rgba(255, 255, 255, 0.418); 
+        padding: 10px;
+        border-radius: 10px;
+
+    }
+
+    .carousel-item {
+        height: 50vh;
+    }
+
+    .carousel-caption h5,
+    .carousel-caption p {
+        font-size: 0.8em;
+    }
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -375,4 +408,16 @@ ul.social-icons li a:last-child {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .exp-container {
+        padding: 10px 5px;
+        margin: 0 20px;
+        margin-bottom: 10px;
+    }
+
+    .exp-row {
+        grid-gap: 10px;
+    }
 }
